@@ -1533,7 +1533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86a0e1a01b5f11c4fad57a99705784f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 2
+  health: 10
   value: 1
   enemyHurtAudio: {fileID: 8300000, guid: 69ce57ffc1ee1614aab19a7c13213903, type: 3}
   hurtEffect: {fileID: 0}

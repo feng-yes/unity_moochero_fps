@@ -571,7 +571,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u8FD4\u56DE\u4E3B\u754C\u9762"
+  m_Text: back to menu
 --- !u!1 &124056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1118,7 +1118,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u82F1 \u96C4 \u540D \u53F7"
+  m_Text: name
 --- !u!1 &139902
 GameObject:
   m_ObjectHideFlags: 0
@@ -1197,7 +1197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6218 \u6597 \u65F6 \u95F4"
+  m_Text: alive time
 --- !u!1 &145042
 GameObject:
   m_ObjectHideFlags: 0
@@ -1276,7 +1276,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u5F00\u59CB\u65B0\u6218\u6597"
+  m_Text: new battle
 --- !u!1 &149076
 GameObject:
   m_ObjectHideFlags: 0
@@ -1434,7 +1434,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u706D \u654C \u6218 \u7EE9"
+  m_Text: kill
 --- !u!1 &152058
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,7 +1900,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6E38\u620F\u4FE1\u606F\n"
+  m_Text: information
 --- !u!1 &169074
 GameObject:
   m_ObjectHideFlags: 0
@@ -2851,7 +2851,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u540D \u6B21"
+  m_Text: rank
 --- !u!1 &198880
 GameObject:
   m_ObjectHideFlags: 0
@@ -2930,4 +2930,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\u6155 \u8BFE \u82F1 \u96C4 \u699C"
+  m_Text: Good Job!!!

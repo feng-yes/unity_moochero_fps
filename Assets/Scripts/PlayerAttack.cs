@@ -6,6 +6,7 @@ public class PlayerAttack : MonoBehaviour {
 
 	public int shootingDamage = 1;				//玩家射击伤害
 	public float shootingRange = 50.0f;			//玩家射击距离
+	public float shootingInterval = 0.1f;			//射击间隔
 	public AudioClip shootingAudio;				//射击音效
 	public GameObject shootingEffect;			//射击时的粒子效果对象
 	public Transform shootingEffectTransform;	//播放粒子效果的Transfrom属性
@@ -19,20 +20,27 @@ public class PlayerAttack : MonoBehaviour {
 
 	private static float LINE_RENDERER_START=0.02f;	//射线初始宽度
 	private static float LINE_RENDERER_END=0.05f;	//射线末端宽度
+	private float lastShootTime=0.0f;	//最后射击的时间
+
+	private AudioSource audioSource;
 
 	//初始化函数，获取组件
 	void Start () {
 		gunLine = GetComponent<LineRenderer> ();		//获取线渲染器组件
 		if (gunLine != null) gunLine.enabled = false;	//在游戏开始时禁用线渲染器组件
 		myCamera = GetComponentInParent<Camera> ();		//获取父对象的摄像机组件
+		audioSource = GetComponent<AudioSource>();
 	}
 
 	//每帧执行一次，在Update函数后调用，实现玩家射击行为
 	void LateUpdate () {	
-		isShooting=CrossPlatformInputManager.GetButtonDown("Fire1");	//获取玩家射击键的输入
+		// isShooting=CrossPlatformInputManager.GetButtonDown("Fire1");	//获取玩家射击键的输入,GetButtonDown在按下的一帧，返回 true 值
+		isShooting=CrossPlatformInputManager.GetButton("Fire1");
 		//若在游戏进行中（Playing）获取玩家射击输入，则调用射击函数
-		if (isShooting && (GameManager.gm==null || GameManager.gm.gameState == GameManager.GameState.Playing)) {
+		if (isShooting && (Time.time - lastShootTime > shootingInterval)
+		&& (GameManager.gm==null || GameManager.gm.gameState == GameManager.GameState.Playing)) {
 			Shoot ();
+			lastShootTime = Time.time;
 		} else if (gunLine != null)	//若射击条件未满足，表示未进行射击，禁用线渲染器
 			gunLine.enabled = false;
 	}
@@ -40,7 +48,8 @@ public class PlayerAttack : MonoBehaviour {
 	//射击函数
 	void Shoot()
 	{
-		AudioSource.PlayClipAtPoint (shootingAudio, transform.position);	//播放射击音效
+		// AudioSource.PlayClipAtPoint (shootingAudio, transform.position);	//播放射击音效
+		audioSource.Play();
 		if (shootingEffect != null) {										//实例化玩家射击效果的粒子系统对象
 			instantiation = Instantiate (shootingEffect, 
 				shootingEffectTransform.position, 

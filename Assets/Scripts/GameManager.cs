@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour {
 		gameResultCanvas.SetActive(false);	//禁用游戏结果Canvas
 
 		if(PlayerPrefs.GetString("Username")=="")	//若玩家未输入姓名，则将其姓名改为无名英雄
-			PlayerPrefs.SetString("Username","无名英雄");
+			PlayerPrefs.SetString("Username","Bell");
 		//从本地保存的数据中获取前三名信息
 		if (PlayerPrefs.GetString ("FirstUser") != "") {
 			firstUserData = new UserData (PlayerPrefs.GetString ("FirstUser"));
@@ -113,10 +113,10 @@ public class GameManager : MonoBehaviour {
 			}
 			//否则，当前游戏状态还是游戏进行时状态
 			else {							
-				scoreText.text = "灭 敌 战 绩 ： " + currentScore;	//显示当前游戏得分
+				scoreText.text = "Kill : " + currentScore;	//显示当前游戏得分
 				healthSlider.value = gm.playerHealth.currentHealth;	//根据玩家当前生命值显示玩家生命值
 				currentTime = Time.time - startTime;				//根据当前时刻与场景加载时刻计算游戏场景运行的时间
-				timeText.text = "战 斗 时 间 ： " + currentTime.ToString ("0.00");	//显示已用时间
+				timeText.text = "Time ： " + currentTime.ToString ("0.00");	//显示已用时间
 				if (mobileControlRigCanvas != null)					//启用移动端控制Canvas
 					mobileControlRigCanvas.SetActive (true);
 			}
@@ -176,13 +176,13 @@ public class GameManager : MonoBehaviour {
 		//若玩家进入前三名，则显示相应的游戏信息
 		switch (currentUserData.order) {
 		case "1":
-			gameMessage.text = "恭喜你荣登慕课英雄榜榜首！";
+			gameMessage.text = "you got No.1 !!";
 			break;
 		case "2":
-			gameMessage.text = "恭喜你荣登慕课英雄榜榜眼！";
+			gameMessage.text = "you got No.2 !!";
 			break;
 		case "3":
-			gameMessage.text = "恭喜你荣登慕课英雄榜探花！";
+			gameMessage.text = "you got No.3 !!";
 			break;
 		default:
 			gameMessage.text = "";
