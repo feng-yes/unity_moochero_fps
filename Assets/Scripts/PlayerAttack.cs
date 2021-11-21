@@ -51,6 +51,8 @@ public class PlayerAttack : MonoBehaviour {
 		// AudioSource.PlayClipAtPoint (shootingAudio, transform.position);	//播放射击音效
 		audioSource.Play();
 		if (shootingEffect != null) {										//实例化玩家射击效果的粒子系统对象
+			// instantiate函数实例化是将original对象的所有子物体和子组件完全复制，成为一个新的对象
+			// 实例化之后，shootingEffect 在 start 里播放并销毁自己
 			instantiation = Instantiate (shootingEffect, 
 				shootingEffectTransform.position, 
 				shootingEffectTransform.rotation) as GameObject;

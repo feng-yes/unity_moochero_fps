@@ -45,7 +45,7 @@ public class GameOverEffects : MonoBehaviour
 		cameraTransform.position = playerCamera.transform.position;			//将主角摄像机的position属性赋值给游戏结束摄像机
 		cameraTransform.eulerAngles = playerCamera.transform.eulerAngles;	//将主角摄像机的rotation属性赋值给游戏结束摄像机
 
-		playerCamera.enabled = false;	//禁用主角摄像机
+		// playerCamera.enabled = false;	//禁用主角摄像机
 		gameOverCamera.enabled = true;	//启用游戏结束摄像机
     }
 
